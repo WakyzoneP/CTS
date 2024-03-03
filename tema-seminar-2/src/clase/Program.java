@@ -15,6 +15,26 @@ public class Program {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
+		List<Elev> listaElevi;
+		try {
+			listaElevi = Utils.readPupil("elevi.txt");
+			for(Elev elev:listaElevi)
+				System.out.println(elev.toString());
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		List<Student> listaStudenti;
+		try {
+			listaStudenti = Utils.readStudents("studenti.txt");
+			for(Student student:listaStudenti)
+				System.out.println(student.toString());
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }

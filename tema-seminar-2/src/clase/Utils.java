@@ -1,8 +1,5 @@
 package clase;
 
-import org.w3c.dom.*;
-import org.xml.sax.SAXException;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -26,9 +23,9 @@ public class Utils {
 			String[] vect = new String[5];
 			for (int i = 0; i < nr; i++)
 				vect[i] = input.next();
-			int an_studii = input.nextInt();
+			int anStudii = input.nextInt();
 			String facultate = (input.next()).toString();
-			Student s = new Student(nume, prenume, varsta, punctaj, nr, vect, facultate, an_studii);
+			Student s = new Student(nume, prenume, varsta, punctaj, nr, vect, facultate, anStudii);
 			studenti.add(s);
 		}
 		input.close();
