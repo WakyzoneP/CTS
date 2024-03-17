@@ -1,0 +1,6 @@
+public enum ETipRegistru {
+    REGISTRU_TEXT,
+    REGISTRU_FOAIE_CALCUL,
+    REGISTRU_PREZENTARE,
+    REGISTRU_OARECARE,
+}
