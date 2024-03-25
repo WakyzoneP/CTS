@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Restaurant {
 
-  private static Restaurant instance = null;
+  private static volatile Restaurant instance = null;
   private List<Masa> mese;
 
   private Restaurant() {
@@ -13,10 +13,17 @@ public class Restaurant {
   }
 
   public static Restaurant getInstance() {
-    if (instance == null) {
-      instance = new Restaurant();
+    Restaurant result = instance;
+    if (result == null) {
+      synchronized (Restaurant.class) {
+        result = instance;
+        if (result == null) {
+          result = new Restaurant();
+        }
+      }
     }
-    return instance;
+
+    return result;
   }
 
   public void addMasa(Masa masa) {
@@ -30,11 +37,9 @@ public class Restaurant {
   public Masa getMesaDisponibila(int nrPersoane, int tipLocatie) {
     for (Masa masa : mese) {
       if (masa.getNrScaune() >= nrPersoane && !masa.isOcupat()) {
-        if (
-          tipLocatie == 2 ||
-          (tipLocatie == 1 && masa.isInauntru()) ||
-          (tipLocatie == 0 && !masa.isInauntru())
-        ) {
+        if (tipLocatie == 2 ||
+            (tipLocatie == 1 && masa.isInauntru()) ||
+            (tipLocatie == 0 && !masa.isInauntru())) {
           return masa;
         }
       }

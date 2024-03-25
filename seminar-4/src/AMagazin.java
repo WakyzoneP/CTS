@@ -7,18 +7,19 @@ public abstract class AMagazin {
 	protected float suprafata;
 	protected int nrIntrari;
 	protected String denumire;
-	
-	AMagazin(IPodea podea, 
+
+	AMagazin(IPodea podea,
 			float suprafata, int nrIntrari,
 			String denumire) {
-		super();
 		this.podea = podea;
 		this.suprafata = suprafata;
 		this.nrIntrari = nrIntrari;
 		this.denumire = denumire;
 	}
-	
+
 	public abstract void descriere();
+
 	public abstract float calculGradIncendiu();
+
 	public abstract void addDecoratiune(IDecoratiuni m) throws ExceptieDecoratiune;
 }
