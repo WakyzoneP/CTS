@@ -7,7 +7,7 @@ public class TextArea {
         this.text = text;
     }
 
-    public Memento takeSnapshot() {
+    public Memento save() {
         return new Memento(this.text);
     }
 
