@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+//Clasa observabil
 public class NotificationService {
     private final Map<Event, List<EventListener>> customers;
 
@@ -20,7 +21,7 @@ public class NotificationService {
         customers.get(eventType).remove(listener);
     }
 
-    
+    //Notify all
     public void notifyCustomers(Event eventType) {
         customers.get(eventType).forEach(listener -> listener.update(eventType));
     }

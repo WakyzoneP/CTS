@@ -1,3 +1,4 @@
+//Clasa observer A(Observator concret)
 public class EmailMsgListener implements EventListener {
     private final String email;
 

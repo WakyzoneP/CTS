@@ -1,3 +1,4 @@
+//Clasa observer B(Observator concret)
 public class MobileAppListener implements EventListener {
     private final String username;
 
