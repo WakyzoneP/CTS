@@ -14,8 +14,8 @@ class Editor {
     }
 
     public void write(String text) {
+        stateHistory.push(textArea.save());
         textArea.set(text);
-        stateHistory.add(textArea.save());
     }
 
     public void undo() {
